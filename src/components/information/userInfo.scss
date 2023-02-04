@@ -53,23 +53,52 @@
       left: 140px;
     }
     .userInfo_left {
-      margin-top: 150px;
-      margin-left: 40px;
-      .input_wrapper {
-        @include flex(center, center);
-        input, label {
-          margin: 5px 80px;
+      margin-top: 120px;
+      .inputs {
+        position: $abs;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 80%;
+        left: 100px;
+        label {
+          display: flex;
+          font-weight: 800;
+          font-size: 28px;
+          margin: 5px;
+        }
+        input {
+          width: 350px;
+          height: 40px;
         }
       }
-      label {
-        color: #000000;
-        font-family: $style;
-        font-weight: 800;
-        font-size: 20px;
+    }
+    .add_photo {
+      position: $abs;
+      font-size: 28px;
+      margin-top: 150px;
+      left: 150px;
+      button {
+        border: none;
+        background: #0e80bf;
+        width: 107px;
+        height: 27px;
+        border-radius: 4px;
+        color: $wh;
+      }
+    }
+
+    .about_yourself {
+      position: $abs;
+      margin-top: 240px;
+      left: 150px;
+      h1 {
+        font-size: 28px;
       }
       input {
-        width: 250px;
-        height: 40px;
+        width: 798px;
+        height: 103px;
+        margin-top: 10px;
       }
     }
   }
@@ -77,11 +106,4 @@
     width: 50vw;
     background: $wh;
   }
-}
-
-.error_message{
- margin-left: 90px;
- color: #2E2E2E;
- font-weight: 300;
- font-size: 14px;
 }
