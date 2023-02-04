@@ -1,0 +1,40 @@
+@use "../../sass/index.scss" as *;
+
+.welcome_container {
+  .shutter {
+    position: $abs;
+    width: $max-content;
+    height: 100vmin;
+  }
+  .logo {
+    position: $abs;
+    width: 236px;
+    height: 38px;
+    left: 70px;
+    top: 25px;
+  }
+  .hr {
+    position: $abs;
+    width: $max-content;
+    border: 1px solid #1a1a1a;
+    top: 89px;
+  }
+  .add_resume {
+    @include flex(center, center);
+    position: $abs;
+    width: 464px;
+    height: 60px;
+    left: calc(50% - 460px / 2);
+    top: 400px;
+    background: #1a1a1a;
+    border-radius: 8px;
+    cursor: $curs;
+    h1 {
+      font-family: $style;
+      color: $wh;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+    }
+  }
+}

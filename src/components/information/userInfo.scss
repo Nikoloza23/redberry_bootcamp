@@ -1,0 +1,87 @@
+@use "../../sass/index.scss" as *;
+
+.userInfo_container {
+  min-height: 100vh;
+  display: flex;
+  .left {
+    width: 80vw;
+    background: $background;
+    position: $rel;
+    .navbar {
+      @include flex(center, space-around);
+      width: 50%;
+    }
+    .vector {
+      position: $abs;
+      width: 9.21px;
+      height: 16px;
+      left: 62px;
+      top: 57px;
+      cursor: $curs;
+      &:hover {
+        background: #fff;
+        transform: scale(1.1);
+      }
+    }
+    .personal_info {
+      position: $abs;
+      width: 179px;
+      height: 29px;
+      left: 149px;
+      top: 47px;
+      font-family: $style;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 29px;
+    }
+    .page_point {
+      position: $abs;
+      width: 29px;
+      height: 24px;
+      left: 620px;
+      top: 49px;
+      font-family: $style;
+      font-weight: 800;
+      font-size: 20px;
+      line-height: 24px;
+    }
+    hr {
+      position: $abs;
+      width: 75%;
+      border: 1px solid #1a1a1a;
+      top: 89px;
+      left: 140px;
+    }
+    .userInfo_left {
+      margin-top: 150px;
+      margin-left: 40px;
+      .input_wrapper {
+        @include flex(center, center);
+        input, label {
+          margin: 5px 80px;
+        }
+      }
+      label {
+        color: #000000;
+        font-family: $style;
+        font-weight: 800;
+        font-size: 20px;
+      }
+      input {
+        width: 250px;
+        height: 40px;
+      }
+    }
+  }
+  .right {
+    width: 50vw;
+    background: $wh;
+  }
+}
+
+.error_message{
+ margin-left: 90px;
+ color: #2E2E2E;
+ font-weight: 300;
+ font-size: 14px;
+}
