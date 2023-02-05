@@ -22,9 +22,9 @@
   .add_resume {
     @include flex(center, center);
     position: $abs;
-    width: 464px;
-    height: 60px;
-    left: calc(50% - 460px / 2);
+    width: 500px;
+    height: 80px;
+    left: calc(50% - 500px / 2);
     top: 400px;
     background: #1a1a1a;
     border-radius: 8px;
@@ -34,7 +34,8 @@
       color: $wh;
       font-style: normal;
       font-weight: 500;
-      font-size: 20px;
+      font-size: 30px;
     }
   }
 }
+
