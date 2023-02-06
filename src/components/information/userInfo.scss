@@ -9,7 +9,7 @@
     display: flex;
   }
   .left {
-    width: 80vw;
+    width: 60vw;
     background: $background;
     position: $rel;
     .navbar {
@@ -65,7 +65,7 @@
         flex-direction: row;
         justify-content: space-around;
         width: 80%;
-        left: 100px;
+        left: 120px;
         label {
           display: flex;
           font-weight: 800;
@@ -82,7 +82,7 @@
       position: $abs;
       font-size: 28px;
       margin-top: 150px;
-      left: 150px;
+      left: 140px;
     }
     .user_photo {
       @include flex(center, center);
@@ -106,8 +106,8 @@
         font-size: 28px;
       }
       input {
-        width: 798px;
-        height: 103px;
+        width: 708px;
+        height: 110px;
         margin-top: 10px;
       }
     }
@@ -119,7 +119,7 @@
         font-size: 28px;
       }
       input {
-        width: 798px;
+        width: 708px;
         height: 53px;
         margin-top: 10px;
       }
@@ -132,7 +132,7 @@
         font-size: 28px;
       }
       input {
-        width: 798px;
+        width: 708px;
         height: 53px;
         margin-top: 10px;
       }
@@ -144,7 +144,7 @@
       position: $abs;
       width: 251px;
       height: 48px;
-      left: 900px;
+      left: 600px;
       bottom: 65px;
       background: #6b40e3;
       border-radius: 4px;
