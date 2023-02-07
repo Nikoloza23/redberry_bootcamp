@@ -3,6 +3,9 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 
 import vector from "../../assets/Vector.png";
+import pirobiti from "../../assets/Rectangle 9.png";
+import addres from "../../assets/email.png";
+import mobile from "../../assets/tel.png";
 
 import "./userInfo.scss";
 
@@ -149,12 +152,28 @@ const UserInfo = () => {
         </nav>
       </div>
       <div className="right">
-        {localStorage.getItem("joinedUserName")}
-        {localStorage.getItem("joinedUserSurName")}
-        {localStorage.getItem("joinedUserMobile")}
-        {localStorage.getItem("joinedUserAbout")}
-        {localStorage.getItem("joinedUserEmail")}
-        {localStorage.getItem("joinedUserProfile")}
+        <img src={pirobiti} alt="" className="joined_user_profile" />
+        <div className="user_">
+          <h1>{localStorage.getItem("joinedUserName")}</h1>
+          <h1 className="joined_user_surname">
+            {localStorage.getItem("joinedUserSurName")}
+          </h1>
+        </div>
+        <div className="user_communication">
+          <div className="joined_user_email">
+            <img src={addres} alt="" />
+            {localStorage.getItem("joinedUserEmail")}
+          </div>
+          <div className="joined_user_email">
+            <img src={mobile} alt="" />
+            {localStorage.getItem("joinedUserMobile")}
+          </div>
+        </div>
+        <header>ჩემ შესახებ</header>
+        <p className="joined_user_about">
+          {localStorage.getItem("joinedUserAbout")}
+        </p>
+        <hr />
       </div>
     </div>
   );

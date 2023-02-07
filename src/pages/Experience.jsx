@@ -1,5 +1,11 @@
-const Experience = (data) => {
-  return <div>{data.name}</div>;
+import UserExperience from "../components/experience/UserExperience";
+
+const Experience = () => {
+  return (
+    <>
+      <UserExperience />
+    </>
+  );
 };
 
 export default Experience;
