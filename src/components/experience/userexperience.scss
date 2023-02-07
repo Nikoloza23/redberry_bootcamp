@@ -1,11 +1,75 @@
 @use "../../sass/index.scss" as *;
 
-
-
+.userExperience_left {
+  margin-top: 150px;
+  margin-left: 430px;
+  .user_position {
+    margin-bottom: 70px;
+    label {
+      font-family: $style;
+      font-style: $f-sty;
+      font-weight: 500;
+      font-size: 26px;
+    }
+    input {
+      margin-top: 10px;
+      width: 698px;
+      height: 48px;
+    }
+  }
+  .user_employer {
+    label {
+      font-family: $style;
+      font-style: $f-sty;
+      font-weight: 500;
+      font-size: 26px;
+    }
+    input {
+      margin-top: 10px;
+      width: 698px;
+      height: 48px;
+      @include flex("", "");
+    }
+  }
+  .user_description {
+    position: $abs;
+    input {
+      width: 798px;
+      height: 123px;
+      background: #ffffff;
+      border: 1px solid #bcbcbc;
+      border-radius: 4px;
+      margin-top: 20px;
+    }
+  }
+  header {
+    margin-top: 270px;
+    font-family: $style;
+    font-style: $f-sty;
+    font-weight: 500;
+    font-size: 26px;
+  }
+  .more_experience {
+    position: $abs;
+    width: 100px;
+    bottom: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 60px;
+    gap: 20px;
+    width: 289px;
+    height: 48px;
+    background: #62a1eb;
+    border-radius: 4px;
+    color: $wh;
+    font-size: 15px;
+  }
+}
 
 .right {
   margin-top: 80px;
-  margin-left: 50px;
+  margin-left: 30px;
   .joined_user_profile {
     position: $abs;
     width: 260px;
@@ -63,4 +127,31 @@
     color: #000000;
     margin-bottom: 20px;
   }
+}
+
+.user_dates {
+  margin-top: 100px;
+  font-family: $style;
+  font-style: $f-sty;
+  font-weight: 500;
+  font-size: 26px;
+  position: $abs;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .end_date {
+    margin-left: 50px;
+  }
+  input {
+    margin-top: 10px;
+    display: flex;
+    width: 371px;
+    height: 48px;
+    background: #ffffff;
+    border-radius: 4px;
+  }
+}
+
+.invalidInput {
+  border: $invalid;
 }

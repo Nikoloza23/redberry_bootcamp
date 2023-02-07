@@ -106,6 +106,7 @@ const UserInfo = () => {
                 <h1>ჩემ შესახებ (არასავალდებულოა)</h1>
                 <input
                   type="text"
+                  placeholder="ზოგადი ინფო შენს შესახებ"
                   {...register("about", {
                     required: false,
                   })}
@@ -169,6 +170,7 @@ const UserInfo = () => {
             {localStorage.getItem("joinedUserMobile")}
           </div>
         </div>
+
         <header>ჩემ შესახებ</header>
         <p className="joined_user_about">
           {localStorage.getItem("joinedUserAbout")}
