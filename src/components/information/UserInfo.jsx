@@ -3,9 +3,6 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 
 import vector from "../../assets/Vector.png";
-import pirobiti from "../../assets/Rectangle 9.png";
-import addres from "../../assets/email.png";
-import mobile from "../../assets/tel.png";
 
 import "./userInfo.scss";
 
@@ -19,16 +16,16 @@ const UserInfo = () => {
     formState: { errors },
   } = useForm();
 
-  const onFormSubmit = (data) => {
-    console.log("Data", data);
+  const onFormSubmit = () => {
     const { name, surName, image, tel, email, about } = getValues();
 
     localStorage.setItem("joinedUserName", name);
-    localStorage.setItem("joinedUserProfile", JSON.stringify(image));
     localStorage.setItem("joinedUserSurName", surName);
+    localStorage.setItem("joinedUserProfile", JSON.stringify(image));
     localStorage.setItem("joinedUserMobile", tel);
     localStorage.setItem("joinedUserEmail", email);
     localStorage.setItem("joinedUserAbout", about);
+
     navigate("/experience");
   };
 
@@ -50,6 +47,8 @@ const UserInfo = () => {
                 <div>
                   <label htmlFor="">სახელი</label>
                   <input
+                    defaultValue={localStorage.getItem("joinedUserName")}
+                    placeholder="სახელი"
                     type="text"
                     className={errors.name ? "input invalidInput" : "input"}
                     {...register("name", {
@@ -69,7 +68,9 @@ const UserInfo = () => {
                 <div>
                   <label htmlFor="">გვარი</label>
                   <input
+                    defaultValue={localStorage.getItem("joinedUserSurName")}
                     type="text"
+                    placeholder="გვარი"
                     className={errors.surName ? "input invalidInput" : "input"}
                     {...register("surName", {
                       required: true,
@@ -105,6 +106,7 @@ const UserInfo = () => {
               <div className="about_yourself">
                 <h1>ჩემ შესახებ (არასავალდებულოა)</h1>
                 <input
+                  defaultValue={localStorage.getItem("joinedUserAbout")}
                   type="text"
                   placeholder="ზოგადი ინფო შენს შესახებ"
                   {...register("about", {
@@ -115,7 +117,9 @@ const UserInfo = () => {
               <div className="email">
                 <h1>ელ.ფოსტა</h1>
                 <input
+                  defaultValue={localStorage.getItem("joinedUserEmail")}
                   type="email"
+                  placeholder="...@redberry.ge"
                   className={errors.email ? "input invalidInput" : "input"}
                   {...register("email", {
                     required: true,
@@ -131,6 +135,7 @@ const UserInfo = () => {
               <div className="mobile">
                 <h1>მობილურის ნომერი</h1>
                 <input
+                  defaultValue={localStorage.getItem("joinedUserMobile")}
                   type="tel"
                   placeholder="+9955__ __ __ __"
                   className={errors.tel ? "input invalidInput" : "input"}
@@ -151,31 +156,6 @@ const UserInfo = () => {
             <button className="next">შემდეგი</button>
           </form>
         </nav>
-      </div>
-      <div className="right">
-        <img src={pirobiti} alt="" className="joined_user_profile" />
-        <div className="user_">
-          <h1>{localStorage.getItem("joinedUserName")}</h1>
-          <h1 className="joined_user_surname">
-            {localStorage.getItem("joinedUserSurName")}
-          </h1>
-        </div>
-        <div className="user_communication">
-          <div className="joined_user_email">
-            <img src={addres} alt="" />
-            {localStorage.getItem("joinedUserEmail")}
-          </div>
-          <div className="joined_user_email">
-            <img src={mobile} alt="" />
-            {localStorage.getItem("joinedUserMobile")}
-          </div>
-        </div>
-
-        <header>ჩემ შესახებ</header>
-        <p className="joined_user_about">
-          {localStorage.getItem("joinedUserAbout")}
-        </p>
-        <hr />
       </div>
     </div>
   );

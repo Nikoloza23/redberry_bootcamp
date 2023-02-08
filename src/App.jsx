@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router";
 import UserInfo from "./components/information/UserInfo";
 import Education from "./pages/Education";
 import Experience from "./pages/Experience";
+import UserInformation from "./pages/UserInformation";
 import Welcome from "./pages/Welcome";
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
     <>
       <Routes>
         <Route path="" element={<Welcome />} />
-        <Route path="/userInfo" element={<UserInfo />} />
+        <Route path="/userInfo" element={<UserInformation />} />
         <Route path="/experience" element={<Experience />} />
         <Route path="/education" element={<Education />} />
       </Routes>

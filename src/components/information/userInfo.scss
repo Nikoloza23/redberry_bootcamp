@@ -65,7 +65,7 @@
         flex-direction: row;
         justify-content: space-around;
         width: 80%;
-        left: 120px;
+        left: 90px;
         label {
           display: flex;
           font-weight: 800;
@@ -144,8 +144,8 @@
       position: $abs;
       width: 251px;
       height: 48px;
-      left: 600px;
-      bottom: 65px;
+      left: 70%;
+      bottom: 50px;
       background: #6b40e3;
       border-radius: 4px;
       color: $wh;
@@ -162,3 +162,8 @@
   border: $invalid;
 }
 
+
+
+input::placeholder{
+  font-size: 20px;
+}

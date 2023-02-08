@@ -31,6 +31,7 @@ const UserExperience = () => {
     navigate("/education");
   };
 
+
   return (
     <div className="userInfo_container">
       <div className="left">
@@ -133,9 +134,7 @@ const UserExperience = () => {
                 </span>
               </div>
               <hr />
-              <button className="more_experience">
-                მეტი გამოცდილების დამატება
-              </button>
+              <div className="more_experience">მეტი გამოცდილების დამატება</div>
               <button className="next">შემდეგი</button>
             </div>
           </form>
@@ -151,19 +150,31 @@ const UserExperience = () => {
         </div>
         <div className="user_communication">
           <div className="joined_user_email">
-            <img src={addres} alt="" />
+            {localStorage.getItem("joinedUserEmail") ? (
+              <img src={addres} alt="" />
+            ) : (
+              ""
+            )}
             {localStorage.getItem("joinedUserEmail")}
           </div>
           <div className="joined_user_email">
-            <img src={mobile} alt="" />
+            {localStorage.getItem("joinedUserMobile") ? (
+              <img src={mobile} alt="" />
+            ) : (
+              ""
+            )}
             {localStorage.getItem("joinedUserMobile")}
           </div>
         </div>
-        <header>ჩემ შესახებ</header>
+        {localStorage.getItem("joinedUserAbout") ? (
+          <header>ჩემ შესახებ</header>
+        ) : (
+          ""
+        )}
         <p className="joined_user_about">
           {localStorage.getItem("joinedUserAbout")}
         </p>
-        <hr />
+        {getValues() ? <hr /> : ""}
       </div>
     </div>
   );

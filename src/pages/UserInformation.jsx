@@ -1,5 +1,11 @@
+import UserInfo from "../components/information/UserInfo";
+
 const UserInformation = () => {
-  return <div></div>;
+  return (
+    <>
+      <UserInfo />
+    </>
+  );
 };
 
 export default UserInformation;
