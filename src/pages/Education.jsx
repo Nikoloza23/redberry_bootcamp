@@ -1,10 +1,11 @@
+import UserEducation from "../components/education/UserEducation";
 
 const Education = () => {
-    return (
-        <>
-         Nikalai   
-        </>
-    );
+  return (
+    <>
+      <UserEducation />
+    </>
+  );
 };
 
 export default Education;

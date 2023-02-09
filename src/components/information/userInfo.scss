@@ -4,10 +4,7 @@
 .userInfo_container {
   min-height: 100vh;
   display: flex;
-  .error_message {
-    color: red;
-    display: flex;
-  }
+
   .left {
     width: 60vw;
     background: $background;
@@ -20,7 +17,7 @@
       position: $abs;
       width: 9.21px;
       height: 16px;
-      left: 62px;
+      left: 82px;
       top: 57px;
       cursor: $curs;
       &:hover {
@@ -152,18 +149,21 @@
       cursor: $curs;
     }
   }
-  .right {
+  .cv_container {
     width: 50vw;
     background: $wh;
   }
 }
 
+.error_message {
+  color: $error-color;
+  display: flex;
+  font-size: 20px;
+}
 .invalidInput {
   border: $invalid;
 }
 
-
-
-input::placeholder{
+input::placeholder {
   font-size: 20px;
 }
