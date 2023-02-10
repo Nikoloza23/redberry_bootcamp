@@ -33,6 +33,8 @@ const UserInfo = () => {
     navigate("/experience");
   };
 
+  const userInfo = JSON.parse(localStorage.getItem("user"));
+
   return (
     <div className="userInfo_container">
       <div className="left">
@@ -52,6 +54,7 @@ const UserInfo = () => {
               <div>
                 <label htmlFor="">სახელი</label>
                 <input
+                  defaultValue={userInfo?.FirstName}
                   placeholder="სახელი"
                   type="text"
                   className={errors.name ? "input invalidInput" : "input"}
@@ -72,6 +75,7 @@ const UserInfo = () => {
               <div>
                 <label htmlFor="">გვარი</label>
                 <input
+                  defaultValue={userInfo?.LastName}
                   type="text"
                   placeholder="გვარი"
                   className={errors.surName ? "input invalidInput" : "input"}
@@ -109,6 +113,7 @@ const UserInfo = () => {
             <div className="about_yourself">
               <h1>ჩემ შესახებ (არასავალდებულოა)</h1>
               <input
+                defaultValue={userInfo?.About}
                 type="text"
                 placeholder="ზოგადი ინფო შენს შესახებ"
                 {...register("about", {
@@ -119,6 +124,7 @@ const UserInfo = () => {
             <div className="email">
               <h1>ელ.ფოსტა</h1>
               <input
+                defaultValue={userInfo?.Email}
                 type="email"
                 placeholder="...@redberry.ge"
                 className={errors.email ? "input invalidInput" : "input"}
@@ -136,6 +142,7 @@ const UserInfo = () => {
             <div className="mobile">
               <h1>მობილურის ნომერი</h1>
               <input
+                defaultValue={userInfo?.Mobile}
                 type="tel"
                 placeholder="+9955__ __ __ __"
                 className={errors.tel ? "input invalidInput" : "input"}

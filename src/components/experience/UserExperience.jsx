@@ -1,5 +1,4 @@
 import { useForm } from "react-hook-form";
-
 import { Link, useNavigate } from "react-router-dom";
 
 import vector from "../../assets/Vector.png";
@@ -36,6 +35,8 @@ const UserExperience = () => {
     navigate("/education");
   };
 
+  const userExperience = JSON.parse(localStorage.getItem("userExperience"));
+
   return (
     <div className="userInfo_container">
       <div className="left">
@@ -54,6 +55,7 @@ const UserExperience = () => {
             <div className="user_position">
               <label htmlFor="">თანამდებობა</label>
               <input
+                defaultValue={userExperience?.Position}
                 type="text"
                 placeholder="დეველოპერი, დიზაინერი, ა.შ."
                 className={errors.position ? "input invalidInput" : "input"}
@@ -71,6 +73,7 @@ const UserExperience = () => {
             <div className="user_employer">
               <label htmlFor="">დამსაქმებელი</label>
               <input
+                defaultValue={userExperience?.Employer}
                 type="text"
                 placeholder="დამსაქმებელი"
                 className={errors.employer ? "input invalidInput" : "input"}
@@ -89,6 +92,7 @@ const UserExperience = () => {
               <div className="start_data">
                 <label htmlFor="">დაწყების რიცხვი</label>
                 <input
+                  defaultValue={userExperience?.StartDate}
                   type="date"
                   className={errors.startDate ? "input invalidInput" : "input"}
                   {...register("startDate", {
@@ -105,6 +109,7 @@ const UserExperience = () => {
               <div className="end_date">
                 <label htmlFor="">დამთავრების რიცხვი</label>
                 <input
+                  defaultValue={userExperience?.EndDate}
                   type="date"
                   className={errors.endDate ? "input invalidInput" : "input"}
                   {...register("endDate", {
@@ -122,6 +127,7 @@ const UserExperience = () => {
             <div className="user_description">
               <header>აღწერა</header>
               <input
+                defaultValue={userExperience?.Description}
                 type="text"
                 placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"
                 className={errors.description ? "input invalidInput" : "input"}
@@ -134,9 +140,11 @@ const UserExperience = () => {
                 {errors.description?.type === "required" && "გთოხვთ შეავსოთ"}
               </span>
             </div>
-            <hr className="bottom_hr"/>
-            <div className="more_experience">მეტი გამოცდილების დამატება</div>
-            <button className="next">შემდეგი</button>
+            <hr className="bottom_hr" />
+            <div className="stepper">
+              <div className="back">უკან</div>
+              <button className="next">შემდეგი</button>
+            </div>
           </div>
         </form>
       </div>

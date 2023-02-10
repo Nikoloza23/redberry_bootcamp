@@ -4,6 +4,23 @@
   margin-top: 150px;
   margin-left: 150px;
   font-size: 40px;
+  .stepper {
+    @include flex(center, space-between);
+    .back {
+      @include flex(center, center);
+      padding: 18px 60px;
+      font-size: 20px;
+      position: $abs;
+      width: 150px;
+      height: 48px;
+      left: 15%;
+      bottom: 50px;
+      background: #6b40e3;
+      border-radius: 4px;
+      color: $wh;
+      cursor: $curs;
+    }
+  }
 
   .user_position {
     margin-bottom: 50px;
@@ -51,19 +68,6 @@
     font-weight: 500;
     font-size: 26px;
   }
-  .more_experience {
-    position: $abs;
-    bottom: 100px;
-    @include flex(center, center);
-    padding: 18px 30px;
-    gap: 20px;
-    width: 289px;
-    height: 48px;
-    background: #62a1eb;
-    border-radius: 4px;
-    color: $wh;
-    font-size: 16px;
-  }
 }
 
 .user_dates {
@@ -87,4 +91,8 @@
 }
 .invalidInput {
   border: $invalid;
+}
+
+input {
+  font-size: 20px;
 }

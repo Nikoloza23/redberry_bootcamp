@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router";
-import UserInfo from "./components/information/UserInfo";
 import Education from "./pages/Education";
 import Experience from "./pages/Experience";
 import UserInformation from "./pages/UserInformation";

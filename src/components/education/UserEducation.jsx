@@ -9,7 +9,7 @@ const UserEducation = () => {
     <div className="userInfo_container">
       <div className="left">
         <nav className="navbar">
-          <Link to="/userExperience" style={{ textDecoration: "none" }}>
+          <Link to="/" style={{ textDecoration: "none" }}>
             <img src={vector} alt="" className="vector" />
           </Link>
           <div className="personal_info">განათლება</div>

@@ -29,7 +29,7 @@ const Resume = () => {
       <p className="joined_user_about">{userInfo.About}</p>
       {userInfo.About ? <hr /> : ""}
       <div className="experience_container">
-        <header>გამოცდილება</header>
+        {userExperience?.Position ? <header>გამოცდილება</header> : ""}
         <div className="user_position">
           {userExperience?.Position}
           <div className="user_employer">{userExperience?.Employer}</div>
@@ -39,7 +39,8 @@ const Resume = () => {
           <div className="user_last_date">{userExperience?.EndDate}</div>
         </div>
         <p className="user_added_description">{userExperience?.Description}</p>
-        {userExperience.Description ? <hr /> : ""}
+        {userExperience?.Description ? <hr /> : ""}
+  
       </div>
     </div>
   );
