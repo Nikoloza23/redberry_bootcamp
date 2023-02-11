@@ -4,7 +4,7 @@
   margin-top: 150px;
   margin-left: 150px;
   .user_school {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 
     label {
       font-family: $style;
@@ -28,7 +28,14 @@
     font-weight: 500;
     font-size: 26px;
     @include flex("", space-between);
-
+    select {
+      width: 350px;
+      height: 48px;
+      background: #ffffff;
+      border-radius: 4px;
+      margin-top: 10px;
+      font-size: 20px;
+    }
     .user_end_date {
       margin-left: 50px;
     }
@@ -42,7 +49,7 @@
   }
   .user_description {
     header {
-      margin-top: 80px;
+      margin-top: 50px;
       font-family: $style;
       font-style: $f-sty;
       font-weight: 500;
@@ -62,14 +69,15 @@
 .redberry_link {
   bottom: 200px;
   left: 150px;
-  position: absolute;
+  position: $abs;
   width: 200px;
   background: #62a1eb;
   border-radius: 4px;
+  height: 50px;
   div {
     @include flex(center, center);
     color: white;
-    font-size: 40px;
+    font-size: 35px;
   }
 }
 

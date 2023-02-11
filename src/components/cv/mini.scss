@@ -1,8 +1,11 @@
 @use "../../sass/index.scss" as *;
 
-.cv_container {
-  margin-top: 80px;
-  margin-left: 30px;
+.mini_cv {
+  width: 822px;
+  padding: 50px;
+  height: 1080px;
+  border: 0.8px solid #000000;
+  margin-left: 500px;
   .joined_user_profile {
     position: $abs;
     width: 260px;
@@ -111,4 +114,3 @@
     }
   }
 }
-
