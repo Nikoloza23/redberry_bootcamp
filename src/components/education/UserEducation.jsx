@@ -28,7 +28,7 @@ const UserEducation = () => {
           <div className="user_education_time">
             <div className="user_degree">
               <label htmlFor="">ხარისხი</label>
-              <input type="text" />
+              <input type="text" placeholder="ხარისხი" />
             </div>
             <div className="user_end_date">
               <label htmlFor="">დამთავრების რიცხვი</label>
@@ -43,6 +43,13 @@ const UserEducation = () => {
             />
           </div>
         </div>
+        <a
+          className="redberry_link"
+          href="https://ge.linkedin.com/company/redberry-%E2%80%A2-%E1%83%A0%E1%83%94%E1%83%93%E1%83%91%E1%83%94%E1%83%A0%E1%83%98"
+          style={{ textDecoration: "none" }}
+        >
+          <div>მეტი</div>
+        </a>
         <hr className="decorate" />
         <div className="stepper">
           <div className="back">უკან</div>

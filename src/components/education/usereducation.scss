@@ -59,3 +59,34 @@
     }
   }
 }
+.redberry_link {
+  bottom: 200px;
+  left: 150px;
+  position: absolute;
+  width: 200px;
+  background: #62a1eb;
+  border-radius: 4px;
+  div {
+    @include flex(center, center);
+    color: white;
+    font-size: 40px;
+  }
+}
+
+.stepper {
+  @include flex(center, space-between);
+  .back {
+    @include flex(center, center);
+    padding: 18px 60px;
+    font-size: 20px;
+    position: $abs;
+    width: 150px;
+    height: 48px;
+    left: 15%;
+    bottom: 50px;
+    background: #6b40e3;
+    border-radius: 4px;
+    color: $wh;
+    cursor: $curs;
+  }
+}
