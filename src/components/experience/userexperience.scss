@@ -33,8 +33,9 @@
     }
     input {
       margin-top: 10px;
-      width: 698px;
-      height: 48px;
+      width: 85%;
+
+      height: 50px;
     }
   }
   .user_employer {
@@ -46,15 +47,17 @@
     }
     input {
       margin-top: 10px;
-      width: 698px;
-      height: 48px;
+      width: 85%;
+
+      height: 50px;
       @include flex("", "");
     }
   }
   .user_description {
     input {
-      width: 798px;
-      height: 123px;
+      width: 85%;
+
+      height: 183px;
       background: #ffffff;
       border: 1px solid #bcbcbc;
       border-radius: 4px;
@@ -83,7 +86,7 @@
   }
   input {
     margin-top: 10px;
-    width: 371px;
+    width: 301px;
     height: 48px;
     background: #ffffff;
     border-radius: 4px;
@@ -93,6 +96,9 @@
   border: $invalid;
 }
 
-input {
-  font-size: 20px;
+.decorate {
+  margin-top: 5%;
+  border: 1px solid #1a1a1a;
+  margin-left: 150px;
+  width: 75%;
 }

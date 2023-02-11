@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 import { Link, useNavigate } from "react-router-dom";
@@ -9,6 +10,7 @@ import "./userInfo.scss";
 //User Info Section
 const UserInfo = () => {
   const navigate = useNavigate();
+  const [image, setImage] = useState("");
 
   const {
     handleSubmit,
@@ -18,12 +20,12 @@ const UserInfo = () => {
   } = useForm();
 
   const onFormSubmit = () => {
-    const { name, surName, image, tel, email, about } = getValues();
+    const { name, surName, photo, tel, email, about } = getValues();
 
     const enteredValues = {
       FirstName: name,
       LastName: surName,
-      Profile: image,
+      Profile: photo,
       Mobile: tel,
       Email: email,
       About: about,
@@ -47,7 +49,7 @@ const UserInfo = () => {
             1/3
           </div>
         </nav>
-        <hr />
+        <hr className="underline" />
         <form onSubmit={handleSubmit(onFormSubmit)}>
           <div className="userInfo_left">
             <div className="inputs">
@@ -97,19 +99,18 @@ const UserInfo = () => {
             </div>
           </div>
           <div className="bottom_section">
-            <h1 className="add_photo">პირადი ფოტოს ატვირთვა</h1>
             <label htmlFor="fileInput" className="user_photo">
               <input
                 style={{ display: "none" }}
-                id="fileInput"
-                accept="image/png, image/jpeg, .txt, .doc"
                 type="file"
-                {...register("fileInput", {
+                id="fileInput"
+                {...register("photo", {
                   required: false,
                 })}
               />
               ატვირთვა
             </label>
+            <h1 className="add_photo">პირადი ფოტოს ატვირთვა</h1>
             <div className="about_yourself">
               <h1>ჩემ შესახებ (არასავალდებულოა)</h1>
               <input

@@ -1,0 +1,61 @@
+@use "../../sass/index.scss" as *;
+
+.user_education_container {
+  margin-top: 150px;
+  margin-left: 150px;
+  .user_school {
+    margin-bottom: 80px;
+
+    label {
+      font-family: $style;
+      font-style: $f-sty;
+      font-weight: 500;
+      font-size: 26px;
+      display: flex;
+    }
+    input {
+      margin-top: 10px;
+      width: 85%;
+
+      height: 50px;
+    }
+  }
+
+  .user_education_time {
+    margin-top: 50px;
+    font-family: $style;
+    font-style: $f-sty;
+    font-weight: 500;
+    font-size: 26px;
+    @include flex("", space-between);
+
+    .user_end_date {
+      margin-left: 50px;
+    }
+    input {
+      margin-top: 10px;
+      width: 350px;
+      height: 48px;
+      background: #ffffff;
+      border-radius: 4px;
+    }
+  }
+  .user_description {
+    header {
+      margin-top: 80px;
+      font-family: $style;
+      font-style: $f-sty;
+      font-weight: 500;
+      font-size: 26px;
+    }
+    input {
+      width: 85%;
+
+      height: 183px;
+      background: #ffffff;
+      border: 1px solid #bcbcbc;
+      border-radius: 4px;
+      margin-top: 20px;
+    }
+  }
+}

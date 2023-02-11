@@ -49,7 +49,7 @@ const UserExperience = () => {
             2/3
           </div>
         </nav>
-        <hr />
+        <hr className="underline" />
         <form onSubmit={handleSubmit(onFormSubmit)}>
           <div className="userExperience_left">
             <div className="user_position">
@@ -140,13 +140,13 @@ const UserExperience = () => {
                 {errors.description?.type === "required" && "გთოხვთ შეავსოთ"}
               </span>
             </div>
-            <hr className="bottom_hr" />
             <div className="stepper">
               <div className="back">უკან</div>
               <button className="next">შემდეგი</button>
             </div>
           </div>
         </form>
+        <hr className="decorate" />
       </div>
       <Resume />
     </div>
