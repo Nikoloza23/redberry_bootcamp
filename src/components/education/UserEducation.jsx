@@ -35,73 +35,61 @@ const UserEducation = () => {
       });
   }, []);
 
+  const userInfo = JSON.parse(localStorage.getItem("user"));
+  const userExperience = JSON.parse(localStorage.getItem("userExperience"));
+
+  const userEducation = JSON.parse(localStorage.getItem("userEducation"));
+
   const onFormSubmit = () => {
     const { school, quality, QyDate, QyDescription } = getValues();
+    const experiences = [
+      {
+        position: userExperience.Position,
+        employer: userExperience.Employer,
+        start_date: "2019/09/09",
+        due_date: "2019/09/09",
+        description: userExperience.Description,
+      },
+    ];
 
-    const enteredEducationValues = {
-      School: school,
-      Quality: quality,
-      QualityDate: QyDate,
-      QualityDescription: QyDescription,
-    };
+    const educations = [
+      {
+        institute: school,
+        degree_id: quality,
+        due_date: "2019/09/09",
+        description: QyDescription,
+      },
+    ];
 
-    localStorage.setItem(
-      "userEducation",
-      JSON.stringify(enteredEducationValues)
-    );
+    localStorage.setItem("userEducation", JSON.stringify(educations));
 
-    navigate("/cv");
-  };
+    const formData = new FormData();
+    formData.append("name", userInfo.FirstName);
+    formData.append("surname", userInfo.LastName);
+    formData.append("email", userInfo.Email);
+    formData.append("phone_number", userInfo.Mobile);
+    experiences.forEach((el) => {
+      formData.append("experiences", JSON.stringify(el));
+    });
+    educations.forEach((el) => {
+      formData.append("educations", JSON.stringify(el));
+    });
+    formData.append("image", userInfo.Profile);
 
-  /* const name = userInfo?.FirstName;
-  const surName = userInfo?.LastName;
-  const tel = userInfo?.Mobile;
-  const email = userInfo?.Email;
-  const about = userInfo?.About;
-  const position = userExperience?.Position;
-  const employer = userExperience?.Employer;
-  const startDate = userExperience?.StartDate;
-  const endDate = userExperience?.EndDate;
-  const description = userExperience?.description;
-  const school = userEducation?.School;
-  const quality = userEducation?.Quality;
-  const QyDate = userEducation?.QualityDate;
-  const QyDescription = userEducation?.QualityDescription; */
-  const sumbitCv = () => {
-    const info = userInfo;
-    const experience = userExperience;
-    const education = userEducation;
     axios
-      .post("https://resume.redberryinternship.ge/api/cvs", {
-        info,
-        experience,
-        education,
-        /*  name,
-        surName,
-        tel,
-        email,
-        about,
-        position,
-        employer,
-        startDate,
-        endDate,
-        description,
-        school,
-        quality,
-        QyDate,
-        QyDescription, */
+      .post("https://resume.redberryinternship.ge/api/cvs", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       })
       .then((response) => {
         console.log(response);
+        navigate("/cv");
       })
       .catch((error) => {
         console.log(error);
       });
   };
-
-  const userInfo = JSON.parse(localStorage.getItem("user"));
-  const userExperience = JSON.parse(localStorage.getItem("userExperience"));
-  const userEducation = JSON.parse(localStorage.getItem("userEducation"));
 
   return (
     <div className="userInfo_container">
@@ -199,9 +187,7 @@ const UserEducation = () => {
             <Link to="/experience" style={{ textDecoration: "none" }}>
               <div className="back">უკან</div>
             </Link>
-            <button className="next" onClick={sumbitCv}>
-              შემდეგი
-            </button>
+            <button className="next">შემდეგი</button>
           </div>
         </form>
       </div>

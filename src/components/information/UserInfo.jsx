@@ -10,7 +10,31 @@ import "./userInfo.scss";
 //User Info Section
 const UserInfo = () => {
   const navigate = useNavigate();
-  const [image, setImage] = useState("");
+
+  const [baseImage, setBaseImage] = useState("");
+
+  const uploadImage = async (e) => {
+    console.log(e);
+    const file = e.target.files[0];
+    const base64 = await convertBase64(file);
+    setBaseImage(base64);
+    console.log(base64);
+  };
+
+  const convertBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
 
   const {
     handleSubmit,
@@ -20,12 +44,12 @@ const UserInfo = () => {
   } = useForm();
 
   const onFormSubmit = () => {
-    const { name, surName, photo, tel, email, about } = getValues();
+    const { name, surName, tel, email, about } = getValues();
 
     const enteredValues = {
       FirstName: name,
       LastName: surName,
-      Profile: photo,
+      Profile: baseImage,
       Mobile: tel,
       Email: email,
       About: about,
@@ -102,13 +126,14 @@ const UserInfo = () => {
               <input
                 style={{ display: "none" }}
                 type="file"
+                onChange={(e) => {
+                  uploadImage(e);
+                }}
                 id="fileInput"
-                {...register("photo", {
-                  required: false,
-                })}
               />
               ატვირთვა
             </label>
+            {}
             <h1 className="add_photo">პირადი ფოტოს ატვირთვა</h1>
             <div className="about_yourself">
               <h1>ჩემ შესახებ (არასავალდებულოა)</h1>

@@ -1,7 +1,6 @@
 import addres from "../../assets/email.png";
 import mobile from "../../assets/tel.png";
 
-import pirobiti from "../../assets/Rectangle 9.png";
 
 import "./resume.scss";
 import "./mini.scss";
@@ -13,7 +12,7 @@ const Resume = ({ type }) => {
 
   return (
     <div className={type === "resume" ? "mini_cv" : "cv_container"}>
-      <img src={pirobiti} alt="" className="joined_user_profile" />
+      <img src={userInfo?.Profile} alt="" className="joined_user_profile" />
       <div className="user_">
         <h1>{userInfo?.FirstName}</h1>
         <h1 className="joined_user_surname">{userInfo?.LastName}</h1>
