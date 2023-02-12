@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import vector from "../../assets/Vector.png";
 
-import "./userexperience.scss";
+import "./userExperience.scss";
 import Resume from "../cv/Resume";
 
 const UserExperience = () => {
@@ -85,7 +85,7 @@ const UserExperience = () => {
               <span className="error_message">
                 {errors.employer?.type === "required" && "გთოხვთ შეავსოთ"}
                 {errors.employer?.type === "minLength" &&
-                  "სახელი უნდა შეიცავდეს 2 დან 12 სიმბოლომდე"}
+                  "სახელი უნდა შეიცავდეს მინიმუმ 2 სიმბოლოს "}
               </span>
             </div>
             <div className="user_dates">
@@ -97,13 +97,10 @@ const UserExperience = () => {
                   className={errors.startDate ? "input invalidInput" : "input"}
                   {...register("startDate", {
                     required: true,
-                    minLength: 2,
                   })}
                 />
                 <span className="error_message">
                   {errors.startDate?.type === "required" && "გთოხვთ შეავსოთ"}
-                  {errors.startDate?.type === "minLength" &&
-                    "სახელი უნდა შეიცავდეს 2 დან 12 სიმბოლომდე"}
                 </span>
               </div>
               <div className="end_date">
@@ -114,26 +111,22 @@ const UserExperience = () => {
                   className={errors.endDate ? "input invalidInput" : "input"}
                   {...register("endDate", {
                     required: true,
-                    minLength: 2,
                   })}
                 />
                 <span className="error_message">
-                  {errors.startDate?.type === "required" && "გთოხვთ შეავსოთ"}
-                  {errors.startDate?.type === "minLength" &&
-                    "სახელი უნდა შეიცავდეს 2 დან 12 სიმბოლომდე"}
+                  {errors.endDate?.type === "required" && "გთოხვთ შეავსოთ"}
                 </span>
               </div>
             </div>
             <div className="user_description">
               <header>აღწერა</header>
-              <input
+              <textarea
                 defaultValue={userExperience?.Description}
-                type="text"
-                placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"
-                className={errors.description ? "input invalidInput" : "input"}
+                className={
+                  errors.description ? "textarea invalidInput" : "textarea"
+                }
                 {...register("description", {
                   required: true,
-                  minLength: 2,
                 })}
               />
               <span className="error_message">
@@ -141,7 +134,9 @@ const UserExperience = () => {
               </span>
             </div>
             <div className="stepper">
-              <div className="back">უკან</div>
+              <Link to="/userInfo" style={{ textDecoration: "none" }}>
+                <div className="back">უკან</div>
+              </Link>
               <button className="next">შემდეგი</button>
             </div>
           </div>

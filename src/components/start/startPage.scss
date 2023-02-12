@@ -16,7 +16,7 @@
   .hr {
     position: $abs;
     width: $max-content;
-    border: 1px solid #1a1a1a;
+    border: 1px solid $bl;
     top: 89px;
   }
   .add_resume {
@@ -26,16 +26,15 @@
     height: 80px;
     left: calc(50% - 500px / 2);
     top: 400px;
-    background: #1a1a1a;
+    background: $bl;
     border-radius: 8px;
     cursor: $curs;
     h1 {
       font-family: $style;
       color: $wh;
-      font-style: normal;
+      font-style: $f-sty;
       font-weight: 500;
       font-size: 30px;
     }
   }
 }
-

@@ -27,14 +27,13 @@
     label {
       font-family: $style;
       font-style: $f-sty;
-      font-weight: 500;
+      font-weight: $f-weight;
       font-size: 26px;
       display: flex;
     }
     input {
       margin-top: 10px;
       width: 85%;
-
       height: 50px;
     }
   }
@@ -42,33 +41,35 @@
     label {
       font-family: $style;
       font-style: $f-sty;
-      font-weight: 500;
+      font-weight: $f-weight;
       font-size: 26px;
     }
     input {
       margin-top: 10px;
       width: 85%;
-
       height: 50px;
       @include flex("", "");
     }
   }
   .user_description {
-    input {
+    textarea {
       width: 85%;
-
-      height: 183px;
+      height: 150px;
       background: #ffffff;
       border: 1px solid #bcbcbc;
       border-radius: 4px;
       margin-top: 20px;
+      font-family: $style;
+      font-style: $f-sty;
+      font-weight: $f-weight;
+      font-size: 26px;
     }
   }
   header {
     margin-top: 80px;
     font-family: $style;
     font-style: $f-sty;
-    font-weight: 500;
+    font-weight: $f-weight;
     font-size: 26px;
   }
 }
@@ -77,10 +78,9 @@
   margin-top: 50px;
   font-family: $style;
   font-style: $f-sty;
-  font-weight: 500;
+  font-weight: $f-weight;
   font-size: 26px;
   @include flex("", space-between);
-
   .end_date {
     margin-left: 50px;
   }
@@ -92,13 +92,10 @@
     border-radius: 4px;
   }
 }
-.invalidInput {
-  border: $invalid;
-}
 
 .decorate {
   margin-top: 5%;
-  border: 1px solid #1a1a1a;
+  border: 1px solid $bl;
   margin-left: 150px;
   width: 75%;
 }

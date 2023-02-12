@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router";
-import Welcome from "./pages/Welcome";
+import Home from "./pages/Home";
 import UserInformation from "./pages/UserInformation";
 import Experience from "./pages/Experience";
 import Education from "./pages/Education";
@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="" element={<Welcome />} />
+        <Route path="" element={<Home />} />
         <Route path="/userInfo" element={<UserInformation />} />
         <Route path="/experience" element={<Experience />} />
         <Route path="/education" element={<Education />} />

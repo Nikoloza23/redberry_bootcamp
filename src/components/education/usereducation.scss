@@ -5,27 +5,24 @@
   margin-left: 150px;
   .user_school {
     margin-bottom: 40px;
-
     label {
       font-family: $style;
       font-style: $f-sty;
-      font-weight: 500;
+      font-weight: $f-weight;
       font-size: 26px;
       display: flex;
     }
     input {
       margin-top: 10px;
       width: 85%;
-
       height: 50px;
     }
   }
-
   .user_education_time {
     margin-top: 50px;
     font-family: $style;
     font-style: $f-sty;
-    font-weight: 500;
+    font-weight: $f-weight;
     font-size: 26px;
     @include flex("", space-between);
     select {
@@ -48,21 +45,21 @@
     }
   }
   .user_description {
+    font-family: $style;
+    font-style: $f-sty;
+    font-weight: $f-weight;
     header {
       margin-top: 50px;
-      font-family: $style;
-      font-style: $f-sty;
-      font-weight: 500;
       font-size: 26px;
     }
-    input {
+    textarea {
       width: 85%;
-
       height: 183px;
       background: #ffffff;
       border: 1px solid #bcbcbc;
       border-radius: 4px;
       margin-top: 20px;
+      font-size: 26px;
     }
   }
 }

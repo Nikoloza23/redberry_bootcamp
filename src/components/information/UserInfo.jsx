@@ -68,10 +68,10 @@ const UserInfo = () => {
                 />
                 <span className="error_message">
                   {errors.name?.type === "required" && "გთოხვთ შეავსოთ"}
-                  {errors.name?.type === "minLength" &&
-                    "სახელი უნდა შეიცავდეს 2 დან 12 სიმბოლომდე"}
                   {errors.name?.type === "pattern" &&
                     "გამოიყენეთ ქართული ასოები"}
+                  {errors.name?.type === "minLength" &&
+                    "სახელი უნდა შეიცავდეს მინიმუმ 2 სიმბოლოს"}
                 </span>
               </div>
               <div>
@@ -83,7 +83,6 @@ const UserInfo = () => {
                   className={errors.surName ? "input invalidInput" : "input"}
                   {...register("surName", {
                     required: true,
-                    maxLength: 12,
                     minLength: 2,
                     pattern: /[ა-ზა-ზ]/gi,
                   })}
@@ -93,7 +92,7 @@ const UserInfo = () => {
                   {errors.surName?.type === "pattern" &&
                     "გამოიყენეთ ქართული ასოები"}
                   {errors.surName?.type === "minLength" &&
-                    "სახელი უნდა შეიცავდეს 2 დან 12 სიმბოლომდე"}
+                    "სახელი უნდა შეიცავდეს მინიმუმ 2 სიმბოლოს"}
                 </span>
               </div>
             </div>

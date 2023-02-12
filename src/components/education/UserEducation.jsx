@@ -173,12 +173,10 @@ const UserEducation = () => {
             </div>
             <div className="user_description">
               <header>აღწერა</header>
-              <input
+              <textarea
                 defaultValue={userEducation?.QualityDescription}
-                type="text"
-                placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"
                 className={
-                  errors.QyDescription ? "input invalidInput" : "input"
+                  errors.QyDescription ? "textarea invalidInput" : "textarea"
                 }
                 {...register("QyDescription", {
                   required: true,

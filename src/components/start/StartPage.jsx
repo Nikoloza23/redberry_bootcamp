@@ -1,10 +1,10 @@
 import shutter from "../../assets/shutterstock.png";
 import logo from "../../assets/LOGO.png";
 
-import "./welcome_design.scss";
+import "./startPage.scss";
 import { Link } from "react-router-dom";
 
-const WelcomeDesign = () => {
+const StartPage = () => {
   return (
     <div className="welcome_container">
       <img src={shutter} alt="" className="shutter" />
@@ -19,4 +19,4 @@ const WelcomeDesign = () => {
   );
 };
 
-export default WelcomeDesign;
+export default StartPage;
