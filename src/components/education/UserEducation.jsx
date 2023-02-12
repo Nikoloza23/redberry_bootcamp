@@ -8,7 +8,7 @@ import Resume from "../cv/Resume";
 
 import vector from "../../assets/Vector.png";
 
-import "./userEducation.scss";
+import "./usereducation.scss";
 
 //Education Page
 const UserEducation = () => {
