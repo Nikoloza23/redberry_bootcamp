@@ -7,18 +7,15 @@ import vector from "../../assets/Vector.png";
 
 import "./userInfo.scss";
 
-//User Info Section
+//User Info Page
 const UserInfo = () => {
   const navigate = useNavigate();
-
   const [baseImage, setBaseImage] = useState("");
 
   const uploadImage = async (e) => {
-    console.log(e);
     const file = e.target.files[0];
     const base64 = await convertBase64(file);
     setBaseImage(base64);
-    console.log(base64);
   };
 
   const convertBase64 = (file) => {

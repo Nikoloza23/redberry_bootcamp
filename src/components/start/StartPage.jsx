@@ -4,6 +4,7 @@ import logo from "../../assets/LOGO.png";
 import "./startPage.scss";
 import { Link } from "react-router-dom";
 
+//StartPage
 const StartPage = () => {
   return (
     <div className="welcome_container">

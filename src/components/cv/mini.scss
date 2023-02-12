@@ -1,5 +1,6 @@
 @use "../../sass/index.scss" as *;
 
+//Mini cv
 .mini_cv {
   width: 822px;
   padding: 50px;
@@ -14,6 +15,7 @@
     top: 130px;
     border-radius: 133px;
     background: none;
+    right: 650px;
   }
   hr {
     width: 90%;

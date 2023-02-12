@@ -1,10 +1,10 @@
 import addres from "../../assets/email.png";
 import mobile from "../../assets/tel.png";
 
-
 import "./resume.scss";
 import "./mini.scss";
 
+//Added Info
 const Resume = ({ type }) => {
   const userInfo = JSON.parse(localStorage.getItem("user"));
   const userExperience = JSON.parse(localStorage.getItem("userExperience"));

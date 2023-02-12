@@ -4,15 +4,14 @@ import { useForm } from "react-hook-form";
 
 import axios from "axios";
 
-import { toast, ToastContainer } from "react-toastify";
-
 import Resume from "../cv/Resume";
 
 import vector from "../../assets/Vector.png";
 
 import "react-toastify/dist/ReactToastify.css";
-import "./usereducation.scss";
+import "./userEducation.scss";
 
+//Education Page
 const UserEducation = () => {
   const navigate = useNavigate();
   const [degree, setDegree] = useState(null);
@@ -35,61 +34,21 @@ const UserEducation = () => {
       });
   }, []);
 
-  const userInfo = JSON.parse(localStorage.getItem("user"));
-  const userExperience = JSON.parse(localStorage.getItem("userExperience"));
-
-  const userEducation = JSON.parse(localStorage.getItem("userEducation"));
-
   const onFormSubmit = () => {
     const { school, quality, QyDate, QyDescription } = getValues();
-    const experiences = [
-      {
-        position: userExperience.Position,
-        employer: userExperience.Employer,
-        start_date: "2019/09/09",
-        due_date: "2019/09/09",
-        description: userExperience.Description,
-      },
-    ];
 
-    const educations = [
-      {
-        institute: school,
-        degree_id: quality,
-        due_date: "2019/09/09",
-        description: QyDescription,
-      },
-    ];
+    const educations = {
+      School: school,
+      Quality: quality,
+      QualityDate: QyDate,
+      QualityDescription: QyDescription,
+    };
 
     localStorage.setItem("userEducation", JSON.stringify(educations));
 
-    const formData = new FormData();
-    formData.append("name", userInfo.FirstName);
-    formData.append("surname", userInfo.LastName);
-    formData.append("email", userInfo.Email);
-    formData.append("phone_number", userInfo.Mobile);
-    experiences.forEach((el) => {
-      formData.append("experiences", JSON.stringify(el));
-    });
-    educations.forEach((el) => {
-      formData.append("educations", JSON.stringify(el));
-    });
-    formData.append("image", userInfo.Profile);
-
-    axios
-      .post("https://resume.redberryinternship.ge/api/cvs", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
-      .then((response) => {
-        console.log(response);
-        navigate("/cv");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    navigate("/cv");
   };
+  const userEducation = JSON.parse(localStorage.getItem("userEducation"));
 
   return (
     <div className="userInfo_container">
