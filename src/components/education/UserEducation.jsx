@@ -8,7 +8,6 @@ import Resume from "../cv/Resume";
 
 import vector from "../../assets/Vector.png";
 
-import "react-toastify/dist/ReactToastify.css";
 import "./userEducation.scss";
 
 //Education Page

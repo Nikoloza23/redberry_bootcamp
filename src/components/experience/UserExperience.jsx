@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import vector from "../../assets/Vector.png";
 
 import "./userExperience.scss";
+
 import Resume from "../cv/Resume";
 
 const UserExperience = () => {
